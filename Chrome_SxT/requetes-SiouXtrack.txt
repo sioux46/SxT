@@ -1,0 +1,1 @@
+SELECT eventDate, eventTime, station, type, targetLocalName as 'target', targetValue, targetTitle ,docTitle, docURL FROM EventTable WHERE type NOT IN ('mousedown', 'mouseup', 'keyup', 'keydown', 'keypress') AND docURL <> '' ORDER BY timeStamp LIMIT 10000;

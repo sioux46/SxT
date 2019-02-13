@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SiouXtrack</title>
+<script src="jquery-2.1.0.min.js"></script>
+<style>
+  	div {
+		text-align:left;
+		text-shadow: -3px -2px 2px #000;
+		font:bold 14px Helvetica, Arial, sans-serif;
+		color:#FFF;
+	}
+    h1 {
+       text-align:center;
+    }
+    body {
+        background-color:#CCC;			/* #CCCECE  #2F393D;	*/
+    }
+	h3 {
+		color:#FFF;  /*CCC*/
+		text-shadow: 0px 0px 0px #000;
+	}
+	#overlay {
+		visibility: hidden;
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width:100%;
+		height:100%;
+		text-align:center;
+		z-index: 1000;
+		opacity: 0.8;
+		background-color: #777784;
+	}
+	#overlay div {
+		width:255px;
+		margin: 55px auto;
+		background-color: #222;
+		border:0px solid #000;
+		padding:0px;
+		text-align:center;
+		opacity: 1;
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pr&eacute;f&eacute;rences&nbsp;&nbsp;de&nbsp;&nbsp;SiouXtrack</h1>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v0.60</h3>
+<hr />
+<form>
+<ul>
+    <li>
+        <label for="ST_URL">URL du serveur:&nbsp;</label>
+        <input type="text" name="ST_URL" id="ST_URL" size="50" />
+    </li>
+    <br />
+
+    <li>
+        <label for="userId">Identifiant:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" name="userId" id="userId" size="50" />
+    </li>
+</ul>
+<hr />
+
+<ul>
+	<li>
+	<label for="recList">Enregistrement
+	<select id="autoRecord" name="autoRecord">
+		<option value="manual" id="manual" name="manual" label="manuel"></option>
+		<option value="manualHidden" id="manualHidden" name="manualHidden" label="manuel masquable"></option>
+		<option value="auto" id="auto" name="auto" label="automatique"></option>
+		<option value="autoHidden" id="autoHidden" name="autoHidden" label="automatique masqu&eacute;"></option>
+	</select>
+	</label>
+	</li>
+</ul>
+<hr />
+
+<ul>
+    <li hidden="hidden">
+	<label for="STButton">Afficher le bouton d'enregistrement&nbsp;<input type="checkbox" name="STButton" id="STButton"   /></label><br />
+    </li>
+
+	<li>
+        <label for="freeField1">Champ libre 1:&nbsp;</label>
+        <input type="text" name="freeField1" id="freeField1" size="50" />
+    </li>
+    <br />
+
+    <li>
+        <label for="freeField2">Champ libre 2:&nbsp;</label>
+        <input type="text" name="freeField2" id="freeField2" size="50" />
+    </li>
+	<br />
+    <li>
+        <label for="freeField3">Champ libre 3:&nbsp;</label>
+        <input type="text" name="freeField3" id="freeField3" size="50" />
+    </li>
+</ul>
+<hr />
+<ul>
+    <li>
+        <label for="maxEvents">Nombre d'&eacute;v&eacute;nements par paquet:&nbsp;</label>
+        <input type="text" name="maxEvents" id="maxEvents" size="4" />
+    </li>
+    <br />
+    <li>
+        <label for="minStation">Station minimale:&nbsp;</label>
+        <input type="text" name="minStation" id="minStation" size="4" />
+    </li>
+</ul>
+<hr />
+<ul>
+    <li>
+        <input type="checkbox" name="mousemove" id="mousemove" />&nbsp;&nbsp;mousemove<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="mouseover" id="mouseover"  />&nbsp;&nbsp;mouseover<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="mouseout" id="mouseout" />&nbsp;&nbsp;mouseout<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="mousewheel" id="mousewheel" />&nbsp;&nbsp;mousewheel<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="scroll" id="scroll"  />&nbsp;&nbsp;scroll<br />
+    </li>
+    <br>
+    <li>
+        <input type="checkbox" name="html" id="html" />&nbsp;&nbsp;html<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="png" id="png"  />&nbsp;&nbsp;png<br />
+    </li>
+    <br />
+    <li>
+        <input type="checkbox" name="pngPlus" id="pngPlus" />&nbsp;&nbsp;png+<br />
+    </li>
+	<br />
+	<li>
+        <label for="pngReduc">Facteur de r&eacute;duction des png:&nbsp;</label>
+        <input type="text" name="pngReduc" id="pngReduc" size="2" />
+    </li>
+</ul>
+<hr />
+<ul>
+    <li>
+        <input type="checkbox" name="noHTTPS" id="noHTTPS" />&nbsp;&nbsp;Exclure HTTPS<br />
+    </li>
+	<br />
+    <li>
+        <label for="regExp1">RegExp 1:&nbsp;</label>
+        <input type="text" name="regExp1" id="regExp1" size="50" />
+    </li>
+    <br>
+
+    <li>
+        <label for="regExp2">RegExp 2:&nbsp;</label>
+        <input type="text" name="regExp2" id="regExp2" size="50" />
+    </li>
+    <br />
+
+    <li>
+        <label for="regExp3">RegExp 3:&nbsp;</label>
+        <input type="text" name="regExp3" id="regExp3" size="50" />
+    </li>
+    <br />
+
+    <li>
+        <label for="regExp4">RegExp 4:&nbsp;</label>
+        <input type="text" name="regExp4" id="regExp4" size="50" />
+    </li>
+    <br />
+
+    <li>
+        <label for="regExp5">RegExp 5:&nbsp;</label>
+        <input type="text" name="regExp5" id="regExp5" size="50" />
+    </li>
+    <br>
+
+</ul>
+<input type="text" name="authoUserId" id="authoUserId" hidden="hidden">
+</form>
+</div>
+
+<div id="overlay">
+    <div>
+		<p>Mot de passe: <input required type="password" name="password" id="password"></p>
+    </div>
+</div>
+
+
+
+<script  src="options.js">
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+AuthUserFile /library/WebServer/Documents/track/.htpasswd
+AuthGroupFile /dev/null
+AuthName "siouxtrack"
+AuthType Basic
+require valid-user

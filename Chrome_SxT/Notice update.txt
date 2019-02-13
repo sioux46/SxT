@@ -1,0 +1,19 @@
+Mise à jour extension Chrome
+
+- manifest.json:    ligne 4 
+- options.html:     ligne 49
+- background.js:    ligne 5
+----------------------------
+- Zipper le dossier SiouXtrack
+- Aller à: https://chrome.google.com/webstore/developer/dashboard
+- Cliquer sur 'Modifer' pour télécharger le fichier .zip
+  (ou sur 'Importer le package mis à jour)
+- Publier les modifications
+
+*******************************
+*******************************
+ANCIENNE VERSION:
+Empacter avec chrome
+----------------------------
+- SiouXtrack_update.xml: ligne 4- copier SiouXtrack.crx
+- copier SiouXtrack_update.xml sur le serveur
