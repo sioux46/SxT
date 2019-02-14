@@ -602,6 +602,7 @@ function getObjectClass(obj) {
       return(obj.constructor.toString().substring(0,17));
 	// return('Function');
 }
+													// Patch pour Simples
   												// LISTEN to EVENT:  DOMSubtreeModified
 ///////////////////////////////////////////////////////////////////////////////
 $(".hcollapsible-content #analysis-content").on("DOMSubtreeModified", function () {
