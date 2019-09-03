@@ -46,7 +46,7 @@
 <!--+++++++++++++++++++++++++++++- FIN     BOUTONS +++++++++++++++++++++++++++++++-->
 
 <div style="margin-left: 15%; margin-right: 15%">
-<p class="titre">Recueil de traces multimédia  dans un navigateur web à des fins d'observation et de diagnostic ergonomique du comportement de l’internaute</p>
+<p class="titre">Recueil de traces multimédia s dans un navigateur web à des fins d'observation et de diagnostic ergonomique du comportement de l’internaute</p>
 <br /><br />
 <p>
 Le module SiouXtrack de recueil de traces permet l’observation de l’ensemble des actions de l’utilisateur. Ce module prend la forme d’une extension au navigateur web installé sur le poste client.
