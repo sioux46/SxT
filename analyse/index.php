@@ -45,6 +45,23 @@
 <br /><br />
 <!--+++++++++++++++++++++++++++++- FIN     BOUTONS +++++++++++++++++++++++++++++++-->
 
+<div style="margin-left: 15%; margin-right: 15%">
+<p class="titre">Recueil de traces multimédia  dans un navigateur web à des fins d'observation et de diagnostic ergonomique du comportement de l’internaute</p>
+<br /><br />
+<p>
+Le module SiouXtrack de recueil de traces permet l’observation de l’ensemble des actions de l’utilisateur. Ce module prend la forme d’une extension au navigateur web installé sur le poste client.
+</p>
+<p>
+Toutes les interactions utilisateur/navigateur sont enregistrables. On peut noter plus ou moins finement les actions de l’utilisateur et les réactions subséquentes du système. Toute action sur l'interface du site web visité pourra être mise en regard des évènements système ainsi déclenchés et des conséquences précises s'en suivant pour l’utilisateur. Sont pris en compte les éléments usuels (boutons, listes, tableaux, menus etc.), les éléments textuels (désignation et saisie de texte) ainsi que les manipulations d'items multimédia (sons, images, vidéos etc.). Les changements de contexte (ouverture/fermeture de document, changement et manipulation de fenêtre/onglet etc.) sont aussi enregistrés. D’une manière générale, est stockée toute information nécessaire à la simulation en différé de l’expérience utilisateur.
+</p>
+<p>
+Une interface destinée à l'observateur-chercheur accessible depuis les préférences du navigateur permet la saisie les paramètres de fonctionnement de l'extension pour déterminer la nature précise des traces à recueillir: liste des évènements à prendre en compte, finesse des enregistrements, détail des propriétés des éléments de la page web à mémoriser etc. Un filtrage des URL visitables peut être défini afin de placer l’utilisateur dans un contexte expérimental contrôlé avec, par exemple, la consigne de réaliser une tâche particulière.
+</p>
+<p>
+Les traces ainsi recueillies sont transmises à un serveur et stockées dans une base de donnée. Cette base de données peut en suite être interrogée pour permettre des analyses statistiques globales et des résumés de types de parcours ainsi que des analyse en termes de protocoles individuels. Ces données utilisées à des fins de caractérisation des usage aiderons au diagnostic des difficultés rencontrées par l’utilisateur au cours de sa navigation.
+</p>
+</div>
+<br /><br />
 <!--.................................................. identification ...-->
 
 		<div id="popupLogin" class="login" style="padding:10px 20px;">
