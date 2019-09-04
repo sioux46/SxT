@@ -387,8 +387,14 @@ else {
   action.push(event.target.currentSrc); // currentSrc	50
   action.push(event.target.muted);  	// muted	51
 	if ( event.type.match(/key/) || event.type == 'input' ) {
-		action.push(focusOffset); // selStart 	52
-		action.push(focusExtend); // selEnd			53
+		try {
+			action.push(focusOffset); // selStart 	52
+		}
+		catch (e) {console.log(e)}
+		try {
+			action.push(focusExtend); // selEnd			53
+		}
+		catch (e) {console.log(e)}
 	}
 	else {
   	action.push(event.target.paused);  	// paused	52
