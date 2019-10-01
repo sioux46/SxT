@@ -1,7 +1,7 @@
 Mise à jour extension Chrome
 
-- manifest.json:    ligne 4 
-- options.html:     ligne 49
+- manifest.json:    ligne 4
+- options.html:     ligne 50
 - background.js:    ligne 5
 ----------------------------
 - Zipper le dossier SiouXtrack
