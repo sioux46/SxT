@@ -2,7 +2,7 @@
 
 //												C H R O M E
 
-var SXT_VERSION = 'O.61';
+var SXT_VERSION = 'O.62';
 
 var TIME_OUT = 900000; // 15 minutes
 var MAX_TIME = 18000000; // 5 heures

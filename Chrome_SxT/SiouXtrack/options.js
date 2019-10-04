@@ -206,7 +206,7 @@
 	 }, false);
 
     if (localStorage['ST_URL']) ST_URL.value = localStorage['ST_URL'];
-    else localStorage['ST_URL'] = ST_URL.value = "http://sioux.univ-paris8.fr/sioux/track";
+    else localStorage['ST_URL'] = ST_URL.value = "https://sioux.univ-paris8.fr/sioux/track";
     if (localStorage['userId']) userId.value = localStorage['userId'];
     else localStorage['userId'] = userId.value = "Anonyme";
     if (localStorage['freeField1']) freeField1.value = localStorage['freeField1'];
