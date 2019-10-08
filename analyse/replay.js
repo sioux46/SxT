@@ -1341,8 +1341,7 @@ if (event[TYPE].match(/resize/) || initFrame) {
 		if (!coorMouse) return;
 
 		if (!autoMode) $("#bille").css(coorMouse);
-		if ((event[TYPE] == 'click') || (event[TYPE] == 'dblclick') || (event[TYPE] == 'clickDif1') ||
-											(event[TYPE] == 'mousedown') ||  (event[TYPE] == 'mouseup')	) {
+		if ((event[TYPE] == 'click') || (event[TYPE] == 'dblclick') || (event[TYPE] == 'clickDif1') ||	(event[TYPE] == 'mousedown') ||  (event[TYPE] == 'mouseup')	) {
 			$("#clicPoint").css("opacity","1")
 		}
 		else $("#clicPoint").css("opacity","0");
@@ -1394,7 +1393,7 @@ if (event[TYPE].match(/resize/) || initFrame) {
 				return false;
 			}
 		}
-
+/*
 		if (origReducFactor == 1) {
 			// ad hoc origReducFactor = 1
 			return {"top":( 50 + y - (billeSize)) + "px",
@@ -1407,6 +1406,13 @@ if (event[TYPE].match(/resize/) || initFrame) {
 					"left":(x - (billeSize)) + "px",
 					"opacity":"0.8"};
 		}
+*/
+		if (origReducFactor == 0.5) billeSize *= 2;
+		return { "top":( y - billeSize /2 ) + "px",
+						 "left":( x - billeSize /2 ) + "px",
+						 "opacity":"0.8" };
+
+
 	}
 
 
