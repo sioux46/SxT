@@ -1393,7 +1393,7 @@ if (event[TYPE].match(/resize/) || initFrame) {
 				return false;
 			}
 		}
-		
+
 		var billeDecal = billeSize / origReducFactor;
 		return { "top":( y - billeDecal /2 ) + "px",
 						 "left":( x - billeDecal /2 ) + "px",
@@ -1839,61 +1839,62 @@ function secondstotime(secs)
 function findPngs() {
 	var done = 0;
 	var maxServerCalls = sessions.length - 1;
-	for (var i = 1; i < sessions.length; i++) {
 
-		function findPng(i,id) {
-			$.ajax({
-				url: 'findPng.php',
-				data: { 'id': id },
-				complete: function(xhr, result) {
-					if (result == 'success') {
-						if (xhr.responseText != "no") {
-							pngs[i] = xhr.responseText;
-							pngsIndex.push(i);
-							pngsNumber++;
-							displaySummary();
-						}
-					}
-					else {
-						$("#top-board1").val("Erreur réseau!").css("color","red");
-						return;
-					}
-					done++;
-					if (done == maxServerCalls) {
-						if (!pngsNumber) {
-							alert("Pas d'images!");
-							window.close();
-							return;
-						}
-
-						//initReplay();   //  affichage interface
-
-						var imgPtr;
-						var j = 1;
-						while (!pngs[j]) pngs[j++] = "";
-						var k = 1;
-						while (pngs[k] == '') pngs[k++] = j;
-						for (; j < sessions.length; j++) {
-							if (pngs[j]) imgPtr = j;
-							else pngs[j] = imgPtr;
-						}
-						pngsIndex.sort(function(a, b) {return a - b});
-						if (eventIndex == 0) {
-							if (isMobile()) {
-								displayEvent(++eventIndex);
-							}
-							else {
-								displayEvent(++eventIndex + 1);
-								displayEvent(eventIndex);
-							}
-							buildTimeline();
-							$("#bottom-boards").css("opacity",1);
-						}
+	function findPng(i,id) {
+		$.ajax({
+			url: 'findPng.php',
+			data: { 'id': id },
+			complete: function(xhr, result) {
+				if (result == 'success') {
+					if (xhr.responseText != "no") {
+						pngs[i] = xhr.responseText;
+						pngsIndex.push(i);
+						pngsNumber++;
+						displaySummary();
 					}
 				}
-			});
-		}
+				else {
+					$("#top-board1").val("Erreur réseau!").css("color","red");
+					return;
+				}
+				done++;
+				if (done == maxServerCalls) {
+					if (!pngsNumber) {
+						alert("Pas d'images!");
+						window.close();
+						return;
+					}
 
+					//initReplay();   //  affichage interface
+
+					var imgPtr;
+					var j = 1;
+					while (!pngs[j]) pngs[j++] = "";
+					var k = 1;
+					while (pngs[k] == '') pngs[k++] = j;
+					for (; j < sessions.length; j++) {
+						if (pngs[j]) imgPtr = j;
+						else pngs[j] = imgPtr;
+					}
+					pngsIndex.sort(function(a, b) {return a - b});
+					if (eventIndex == 0) {
+						if (isMobile()) {
+							displayEvent(++eventIndex);
+						}
+						else {
+							displayEvent(++eventIndex + 1);
+							displayEvent(eventIndex);
+						}
+						buildTimeline();
+						$("#bottom-boards").css("opacity",1);
+					}
+				}
+			}
+		});
+	}
+
+
+	for (var i = 1; i < sessions.length; i++) {
 		id = sessions[i][BLOB_ID];
 		if (!id) maxServerCalls--;
 		else findPng(i, id);
