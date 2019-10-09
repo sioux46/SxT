@@ -1393,23 +1393,10 @@ if (event[TYPE].match(/resize/) || initFrame) {
 				return false;
 			}
 		}
-/*
-		if (origReducFactor == 1) {
-			// ad hoc origReducFactor = 1
-			return {"top":( 50 + y - (billeSize)) + "px",
-					"left":( 50 + x - (billeSize)) + "px",
-					"opacity":"0.8"};
-		}
-		else {
-			// ad hoc origReducFactor = 0.5
-			return {"top":(y - (billeSize)) + "px",
-					"left":(x - (billeSize)) + "px",
-					"opacity":"0.8"};
-		}
-*/
-		if (origReducFactor == 0.5) billeSize *= 2;
-		return { "top":( y - billeSize /2 ) + "px",
-						 "left":( x - billeSize /2 ) + "px",
+		
+		var billeDecal = billeSize / origReducFactor;
+		return { "top":( y - billeDecal /2 ) + "px",
+						 "left":( x - billeDecal /2 ) + "px",
 						 "opacity":"0.8" };
 
 
