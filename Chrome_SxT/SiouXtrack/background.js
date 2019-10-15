@@ -2,7 +2,7 @@
 
 //												C H R O M E
 
-var SXT_VERSION = 'O.64';
+var SXT_VERSION = 'O.65';
 
 var TIME_OUT = 900000; // 15 minutes
 var MAX_TIME = 18000000; // 5 heures
@@ -73,6 +73,7 @@ chrome.runtime.onSuspend.addListener(function() {   //   			unload siouxtrack
 	}
 });
 ///////////////////////////////////////////////////////////////////////////////////////
+showHideButton();
 ///////////////////////////////////////////////////////////////////////////////////////
 function fromInject(data, sender, sendResponse) {    // inject à l'écoute
 	var event = {origin: sender.tab.url, source: sender.tab.id};
