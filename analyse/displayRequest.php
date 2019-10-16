@@ -71,7 +71,10 @@ if (isset($_POST)) {
 		}
 		$sessions = substr($sessions, 0, -2) . ")";
 	}
-	else $sessions = "";
+	else if ( $_SESSION['username'] == 'RedBird' ) $sessions = "";
+	else {
+		echo 'Aucune session sélectionnée!'; exit;
+	}
 
 	if(isset($_POST['replayFlag']) && $_POST['replayFlag'] == 'replay') {     //  REPLAY SESSIONS
 		$replay = 1;
