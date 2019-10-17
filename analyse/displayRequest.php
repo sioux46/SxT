@@ -93,7 +93,7 @@ if (isset($_POST)) {
 			$requete = str_replace('where ', 'WHERE '.$sessions.' AND ', $requete);
 		}
 		else if ($sessions !='') {
-			$requete = str_replace('Event_L_DocSuite ', 'Event_L_DocSuite WHERE '.$sessions.' ', $requete);
+			$requete = str_replace('Event_L_DocSuite', 'Event_L_DocSuite WHERE '.$sessions.' ', $requete);
 		}
 	}
 	else if ($replay) {									//  REPLAY SESSIONS
