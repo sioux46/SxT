@@ -47,7 +47,7 @@ echo '<form method="post" action="displayRequest.php" target="_blank" name="choi
 
 
 // ------------------------------- type de tri de la liste de sessions
-echo '<br /><span class="titre light-blueColor large">Choisissez zero, une ou plusieurs sessions...</span><br /><br /><br />';
+echo '<br /><span class="titre light-blueColor large">Choisissez une ou plusieurs sessions...</span><br /><br /><br />';
 
 echo '<div id="order-sessions" style="display:none;">';
 	echo '<br /><p class="titre gray" >Ordre des sessions:</p><br />';
@@ -104,7 +104,7 @@ echo '<br /><br /><br />';
 
 
 //  													REPLAY SESSIONS
-echo '<span class="titre light-blueColor large">...puis rejouez les sessions choisies</span>';
+echo '<span class="titre light-blueColor large">...puis rejouez la ou les sessions choisies</span>';
 echo '<br /><br /><br />';
 
 // MODE CHANTIER: disabled='disabled' style='opacity:0.5;'
