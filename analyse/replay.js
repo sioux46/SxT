@@ -835,7 +835,7 @@ function initReplay() {
 						"padding":5,
 						"padding-bottom":11,
 						"height":(TOP_BOARD_HEIGHT * 2) + PADDING + 3,
-						"font-size":"small",  // "medium",
+						"font-size":"medium",  // "small",
 						"background-color":DARK_GRAY,
 						"color":"white"
 						});

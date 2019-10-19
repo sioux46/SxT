@@ -4,6 +4,7 @@
 body {
 	font-family:Courier, Helvetica, Arial, Trebuchet MS,   sans-serif;
 	font-size: 14px;
+	min-width:1100px;
 }
 .body {
 	font-family:Courier, Helvetica, Arial, Trebuchet MS,   sans-serif;
@@ -72,8 +73,8 @@ body {
 .bout.green-garde {border-top:6px solid #0FA;}
 .bout.green {border-top:6px solid #099;}
 .bout.light-blue {border-top:6px solid #9CF;}
-.bout.gray {border-top:6px solid #AAA;} 
-.bout.mauve {border-top:6px solid #BBE;} 
+.bout.gray {border-top:6px solid #AAA;}
+.bout.mauve {border-top:6px solid #BBE;}
 .bout.yellow {border-top:6px solid #FF0;}
 .bout.dark-yellow {border-top:6px solid #A86;}
 .bout.light-orange {border-top:6px solid #FA0;}
@@ -142,7 +143,7 @@ td, th {
 }
 th {
 	background-color:#FFF;
-	border:2px solid #AAA; 
+	border:2px solid #AAA;
 	font-weight:bold;
 	color:#666;
 }
@@ -151,10 +152,10 @@ td {
 /*	background-color:#F3F3F3;*/
 }
 tr:nth-child(even) {
-	background-color:#F7F7F7;	
+	background-color:#F7F7F7;
 }
 tr:nth-child(odd) {
-	background-color:#E8E8E8;	
+	background-color:#E8E8E8;
 }
 h1 {
 	font-weight:bold;
@@ -195,7 +196,7 @@ input[type="text"] {
 	width:163px;
 }
 select.large  {
-	width:170px; 
+	width:170px;
 }
 select.small, input.small {
 /*	width:30px;  */
@@ -306,8 +307,8 @@ select.medium, input.medium {
 
 /*********************************************/
 
-.miniSiouxText {  
-	border-bottom: 1px solid #FFF;	
+.miniSiouxText {
+	border-bottom: 1px solid #FFF;
 	padding-bottom:0px;
 	margin-top:0px;
 	margin-bottom:0px;
