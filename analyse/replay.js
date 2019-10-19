@@ -62,7 +62,7 @@ var TIMELINE_ZOOM_WIDTH = 220;
 var TIMELINE_RIGHT_MARGIN = 30;
 var TIMELINE_ADJUST = 20; // 25
 //.............................
-var BILLE_SIZE = 100;
+var BILLE_SIZE = 60; //100;
 var MAX_ANIM_TIME = 800;
 var MINI_REDUC= 8;
 var MIN_TIME_ZOOM = 1;
@@ -1398,7 +1398,6 @@ if (event[TYPE].match(/resize/) || initFrame) {
 		return { "top":( y - billeDecal /2 ) + "px",
 						 "left":( x - billeDecal /2 ) + "px",
 						 "opacity":"0.8" };
-
 
 	}
 
