@@ -62,7 +62,7 @@ var TIMELINE_ZOOM_WIDTH = 220;
 var TIMELINE_RIGHT_MARGIN = 30;
 var TIMELINE_ADJUST = 20; // 25
 //.............................
-var BILLE_SIZE = 60; //100;
+var BILLE_SIZE = 70; //100;
 var MAX_ANIM_TIME = 800;
 var MINI_REDUC= 8;
 var MIN_TIME_ZOOM = 1;
@@ -1374,7 +1374,7 @@ if (event[TYPE].match(/resize/) || initFrame) {
 	function calCoorMouse(event) {
 
 		if (reducFactor) {
-			billeSize = reducFactor * BILLE_SIZE;
+			 billeSize = reducFactor * BILLE_SIZE;
 			$("#billePng").width(billeSize);
 		}
 
