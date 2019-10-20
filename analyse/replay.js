@@ -812,17 +812,17 @@ function initReplay() {
 // 	DATE	TIME
 	$("#top-board4").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
 						"height":TOP_BOARD_HEIGHT,
-						"width":USER_ID_WIDTH,
+						"width":USER_ID_WIDTH + 32,
 						"background-color":"#333", // "black",
 						"border":"3px solid black",
 						"color":"red",
-						"font-size":"medium",
+						"font-size":18,
 						"font-weight":"bold"
 						});		// "border":"2px solid gray"
 
 //  TYPE 	TARGET
 	$("#top-board5").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
-						"left":timeLineLeft + USER_ID_WIDTH + 18,
+						"left":timeLineLeft + USER_ID_WIDTH + 18 + 32,
 						"height":TOP_BOARD_HEIGHT,
 						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18,
 						"right":BOARD_MARGIN * 2,
@@ -1009,6 +1009,7 @@ function initReplay() {
 						"padding":4,
 						"color":"red",
 						"text-align":"center",
+						"font-size":20,
 						"background-color":VERY_LIGHT_GRAY
 						}).addClass("body");
 
@@ -1016,6 +1017,7 @@ function initReplay() {
 						"left":340,
 //						"right":PADDING,
 						"text-align":"left",
+						"font-size":20,
 						"vertical-align":"top"});
 
 //	URL REGEXP
