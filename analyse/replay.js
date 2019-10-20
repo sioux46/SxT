@@ -824,7 +824,7 @@ function initReplay() {
 	$("#top-board5").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
 						"left":timeLineLeft + USER_ID_WIDTH + 18 + 32,
 						"height":TOP_BOARD_HEIGHT,
-						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18,
+						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18 -12,
 						"right":BOARD_MARGIN * 2,
 						"background-color":VERY_LIGHT_GRAY,
 						"border":"3px solid black"
