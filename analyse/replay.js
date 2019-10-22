@@ -1796,16 +1796,17 @@ function displayEventMobile() {
 function displaySummary() {  // display  top-board1
 	var eventInfo = 'Position: <span style="color:black;">' + eventIndex + '</span>/' + (sessions.length - 1);
 	var pngInfo;
-	if (pngsNumber) pngInfo = 'Image: ' + pngIndex + '/' + pngsNumber;
+	var barColorString = '<span style="color:black;">'
+	if (pngsNumber) pngInfo = 'Image: ' + barColorString + pngIndex + '</span>' + '/' + pngsNumber;
 	else pngInfo = "Pas d'image!";
 	var reducInfo = '';
-	if (reducFactor) reducInfo = ' ' + reducFactor.toFixed(1) + '(' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
+	if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + '(' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
 
 	var dureePast = ((sessions[eventIndex][TIME_STAMP] - sessions[1][TIME_STAMP]) / 1000).toFixed();
 	if (dureePast == "NaN") dureePast = 0;
 	dureePast = secondstotime(dureePast);
-	var barColor = "black";
-	$("#top-board1").html(eventInfo + '<span style="color:' + barColor + '">  |  </span>' + pngInfo + '<span style="color:' + barColor + '">  |  </span>' + reducInfo + '<span style="color:' + barColor + '">  |  </span>Durée: <span id="durPast" style="color:red">' + dureePast + '</span>/' + dureeProto);
+
+	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  |  </span>Temps: <span id="durPast" style="color:black">' + dureePast + '</span>/' + dureeProto);
 
 //¨¨¨¨¨¨¨¨¨¨
 /*	$("#top-board2").text(sessions[eventIndex][DOC_URL]);
