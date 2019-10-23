@@ -822,6 +822,7 @@ function initReplay() {
 
 //  TYPE 	TARGET
 	$("#top-board5").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
+						"white-space": "nowrap",
 						"left":timeLineLeft + USER_ID_WIDTH + 18 + 32,
 						"height":TOP_BOARD_HEIGHT,
 						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18 -12,
@@ -1800,7 +1801,7 @@ function displaySummary() {  // display  top-board1
 	if (pngsNumber) pngInfo = 'Image: ' + barColorString + pngIndex + '</span>' + '/' + pngsNumber;
 	else pngInfo = "Pas d'image!";
 	var reducInfo = '';
-	if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + '(' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
+	if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + ' (' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
 
 	var dureePast = ((sessions[eventIndex][TIME_STAMP] - sessions[1][TIME_STAMP]) / 1000).toFixed();
 	if (dureePast == "NaN") dureePast = 0;
