@@ -1825,8 +1825,9 @@ function filterEventLocalTarget(localT, T) {
 	var t = T.toLowerCase();
 	if (t.indexOf('function') != -1) return 'Window';
 	if (loc == "") return 'Window';
-	if (loc == t) return T;
-	else return T + '(' + localT + ')';
+	return T;
+//	if (loc == t) return T;
+//	else return T + '(' + localT + ')';
 }
 //*************************************************************************************************
 function secondstotime(secs)
