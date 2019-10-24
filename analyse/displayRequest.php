@@ -15,7 +15,7 @@
 	<title>R&eacute;sultats</title>
 </head>
 
-<body>
+<body style="min-width:1100px;">
 <script  type="text/javascript">
 	var queryData;
 </script>

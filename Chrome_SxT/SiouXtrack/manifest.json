@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SiouXtrack",
-  "version": "0.65",
+  "version": "0.66",
   "description": "Observation du comportement pour un diagnostic ergonomique",
   "homepage_url": "https://sioux.univ-paris8.fr/sioux",
   "permissions": ["<all_urls>", "storage", "unlimitedStorage", "tabs"],

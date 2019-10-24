@@ -2,7 +2,7 @@
 
 //												C H R O M E
 
-var SXT_VERSION = 'O.65';
+var SXT_VERSION = 'O.66';
 
 var TIME_OUT = 900000; // 15 minutes
 var MAX_TIME = 18000000; // 5 heures
@@ -72,8 +72,8 @@ chrome.runtime.onSuspend.addListener(function() {   //   			unload siouxtrack
 		alert(xhr.statusText + '. Echec de l\'enregistrement (URL non trouvé)');
 	}
 });
-///////////////////////////////////////////////////////////////////////////////////////
-showHideButton();
+/////////////////////
+// F U N C T I O N S
 ///////////////////////////////////////////////////////////////////////////////////////
 function fromInject(data, sender, sendResponse) {    // inject à l'écoute
 	var event = {origin: sender.tab.url, source: sender.tab.id};
@@ -137,9 +137,14 @@ function updateBadge(err) {
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 function saveFromButton(tab) {
-	if (localStorage.autoRecord.indexOf('auto') != -1) return;
 
-    showError("[button]");
+	if ( !localStorage.autoRecord ) {
+		showHideButton();
+		return;
+	}
+	if (localStorage.autoRecord.indexOf('auto') != -1) return;
+	////
+  showError("[button]");
 	if (localStorage.autoRecord.indexOf('Hidden') != -1) {
 		localStorage.STButton = (localStorage.STButton == 'true') ? 'false' : 'true';
 	}
