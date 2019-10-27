@@ -2,7 +2,7 @@
 
 //												C H R O M E
 
-var SXT_VERSION = 'O.67';
+var SXT_VERSION = 'O.66';
 
 var TIME_OUT = 900000; // 15 minutes
 var MAX_TIME = 18000000; // 5 heures
@@ -50,16 +50,6 @@ var lastURL = '';
 	chrome.browserAction.onClicked.addListener(saveFromButton);
 
 	console.log('LOAD background.js');
-
-	// ouvrir option.html si pas de localStorage
-	if ( !localStorage.STButton ) {
-		if (chrome.runtime.openOptionsPage) {
-			chrome.runtime.openOptionsPage();
-			}
-		else {
-			window.open(chrome.runtime.getURL('options.html'));
-		}
-	}
 
 	if ((localStorage.autoRecord == 'auto') || (localStorage.autoRecord == 'autoHidden'))
 			pushNewSession('startSxT');
