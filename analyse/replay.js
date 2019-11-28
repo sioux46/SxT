@@ -57,7 +57,7 @@ var GLOBAL_HEIGHT = 500;
 var BOARD_MIN_WIDTH = 1000;
 var INPUT_HEIGHT = 26;
 var PADDING = 8;
-var USER_ID_WIDTH = 390;
+var USER_ID_WIDTH = 460;
 var TIMELINE_ZOOM_WIDTH = 220;
 var TIMELINE_RIGHT_MARGIN = 30;
 var TIMELINE_ADJUST = 20; // 25
@@ -73,6 +73,7 @@ var DARK_BLUE = '#00B';
 var DARK_GREEN = '#0A0';
 var DARK_GREEN_TRANS = 'rgba(0,192,0,0.5)';
 var DARK_GRAY = '#666';
+var DARK_RED = '#d01c00';
 
 // créé par displayRequest.php: sessions, reducShowPng
 
@@ -799,7 +800,7 @@ function initReplay() {
 						"border":"3px solid " + DARK_GREEN_TRANS,
 						"border-bottom":0,
 						"background-color":"white",
-						"color":DARK_GREEN,
+						"color":DARK_RED,
 						"font-size":18,
 						"font-weight":"bold"
 						});		// "border":"2px solid gray"
@@ -812,7 +813,7 @@ function initReplay() {
 // 	DATE	TIME
 	$("#top-board4").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
 						"height":TOP_BOARD_HEIGHT,
-						"width":USER_ID_WIDTH + 32,
+						"width":USER_ID_WIDTH,
 						"background-color":"#333", // "black",
 						"border":"3px solid black",
 						"color":"red",
@@ -823,9 +824,9 @@ function initReplay() {
 //  TYPE 	TARGET
 	$("#top-board5").css({"top":BOARD_MARGIN + (BOARD_MARGIN * 3),
 						"white-space": "nowrap",
-						"left":timeLineLeft + USER_ID_WIDTH + 18 + 32,
+						"left":timeLineLeft + USER_ID_WIDTH + 18,
 						"height":TOP_BOARD_HEIGHT,
-						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18 -12,
+						"min-width":BOARD_MIN_WIDTH - USER_ID_WIDTH - 18 -76,
 						"right":BOARD_MARGIN * 2,
 						"background-color":VERY_LIGHT_GRAY,
 						"border":"3px solid black"
@@ -1005,7 +1006,7 @@ function initReplay() {
 						});
 //................................................
 	$("#event-type").css({
-						"width":300,
+						"width":240,
 						"top":4,
 						"padding":4,
 						"color":"red",
@@ -1604,8 +1605,8 @@ function displayEventMobile() {
 		}
 
 		$("#top-board4").html(event[EVENT_DATE] + '    ' +
-							event[EVENT_TIME] + ' | ' +
-							'<span id="event-count-down" style="color:yellow;">' + eventCountDownString + '</span>/' + eventCountDownString);
+							event[EVENT_TIME] + '<span style="color:white;font-size:130%;"> | ' + '</span>' +
+							'<span id="event-count-down" style="color:yellow;font-size:130%;">' + eventCountDownString + '</span>/' + eventCountDownString);
 		$("#event-type").val(typeFilter);
 		$("#event-target").text(event[TYPE] + '  ' + filterEventLocalTarget(event[TARGET_LOCAL_NAME], event[TARGET]));
 		$("#top-board6").text(event[DOC_TITLE]);
@@ -1795,19 +1796,20 @@ function displayEventMobile() {
 //****************************************************************************************
 
 function displaySummary() {  // display  top-board1
-	var eventInfo = 'Position: <span style="color:black;">' + eventIndex + '</span>/' + (sessions.length - 1);
+	var eventInfo = 'Position: <span style="color:black;font-size:130%;">' + eventIndex + '</span>/' + (sessions.length - 1);
 	var pngInfo;
-	var barColorString = '<span style="color:black;">'
+	var barColorString = '<span style="color:black;font-size:130%;">'
 	if (pngsNumber) pngInfo = 'Image: ' + barColorString + pngIndex + '</span>' + '/' + pngsNumber;
 	else pngInfo = "Pas d'image!";
 	var reducInfo = '';
-	if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + ' (' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
+	// if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + ' (' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
+	if (reducFactor) reducInfo = ' ' + reducFactor.toFixed(1)  + ' (' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
 
 	var dureePast = ((sessions[eventIndex][TIME_STAMP] - sessions[1][TIME_STAMP]) / 1000).toFixed();
 	if (dureePast == "NaN") dureePast = 0;
 	dureePast = secondstotime(dureePast);
 
-	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  |  </span>Temps: <span id="durPast" style="color:black">' + dureePast + '</span>/' + dureeProto);
+	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  </span><span style="color:black;font-size:130%;">  |  </span>Temps: <span id="durPast" style="color:black;font-size:130%;">' + dureePast + '</span>/' + dureeProto);
 
 //¨¨¨¨¨¨¨¨¨¨
 /*	$("#top-board2").text(sessions[eventIndex][DOC_URL]);
