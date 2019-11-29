@@ -11,7 +11,6 @@
 	<script src="lib/jquery-2.1.3.min.js"></script>
 	<script src="displayPng.js" type="text/javascript"></script>
 	<script src="storeHisto.js" type="text/javascript"></script>
-<!--		<script src="replay.js" type="text/javascript"></script>  -->
 	<title>R&eacute;sultats</title>
 </head>
 

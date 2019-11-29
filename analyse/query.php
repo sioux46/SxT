@@ -76,7 +76,7 @@ echo '<br /><p id="username" style="text-align:left; padding-left:65px; padding-
 //---------------------------------    liste des sessions
 
 
-$bulle = "&nbsp;&nbsp;&nbsp;&nbsp;S&eacute;lectionnez&nbsp;des&nbsp;sessions&nbsp;puis&nbsp;construisez&nbsp;votre&nbsp;requ&ecirc;te.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour&nbsp;une&nbsp;requ&ecirc;te&nbsp;concernant&nbsp;l'ensemble&nbsp;des&nbsp;sessions,&nbsp;ne&nbsp;rien&nbsp;s&eacute;lectionner.\n";
+$bulle = "&nbsp;&nbsp;&nbsp;&nbsp;S&eacute;lectionnez&nbsp;des&nbsp;sessions&nbsp;puis&nbsp;construisez&nbsp;votre&nbsp;requ&ecirc;te.\n";
 
 // echo "<br /> <p style=\"margin-top:6px\" class=\"petit\" id=\"sessionsListQuery\"></p><br />\n";
 
