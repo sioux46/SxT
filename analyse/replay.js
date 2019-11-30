@@ -75,6 +75,29 @@ var DARK_GREEN_TRANS = 'rgba(0,192,0,0.5)';
 var DARK_GRAY = '#666';
 var DARK_RED = '#d01c00';
 
+/*
+var EVENT_PROPS = {
+			'focus': {color:'#4F4', z:13, width:3},
+			'click': {color:'red', z:15, width:3},
+
+		 	'clickDif1': {color:'green', z:15, width:1},
+		 	'clickDif2': {color:'green', z:15, width:1},
+		 	'appEvent': {color:'blue', z:15, width:2},
+
+		 	'touchstart': {color:'#F82', z:14, width:2},
+		 	'touchend': {color:'#4AA', z:14, width:2},
+
+		 	'pageshow': {color:'#4F4', z:13, width:3},
+		 	'resize': {color:'#730', z:16, width:3},  // #9DF
+		 	'mousewheel': {color:'#FD0', z:9, width:1},
+		 	'scroll': {color:'#FD0', z:9, width:2},
+		 	'keydown': {color:'black', z:9, width:2},
+		 	'keyup': {color:'black', z:9, width:2},
+		 	'input': {color:'black', z:14, width:3},
+		 	'keypress': {color:'black', z:9, width:2}
+		};
+*/
+
 // créé par displayRequest.php: sessions, reducShowPng
 
 var eventIndex = 0;
@@ -843,13 +866,12 @@ function initReplay() {
 						});
 
 //  DOC_TITLE
-	$("#top-board6").css({"top":TOP_BOARD_HEIGHT + (BOARD_MARGIN * 11),
-
-						"height":(TOP_BOARD_HEIGHT) + PADDING + 4,
-						"font-size":"medium",
+	$("#top-board6").css({"top":TOP_BOARD_HEIGHT + (BOARD_MARGIN * 11) + 12,
+						"height":(TOP_BOARD_HEIGHT) + PADDING - 5,
+						"font-size":"large",
 						"text-align":"center",
+						"padding":"2px",
 						"background-color":VERY_LIGHT_GRAY,
-//						"border":"2px solid black",
 						"font-weight":"bold",
 						"color":"black"
 						});
@@ -1007,7 +1029,7 @@ function initReplay() {
 //................................................
 	$("#event-type").css({
 						"width":240,
-						"top":4,
+						"top":2,
 						"padding":4,
 						"color":"red",
 						"text-align":"center",
@@ -1016,11 +1038,14 @@ function initReplay() {
 						}).addClass("body");
 
 	$("#event-target").css({
-						"left":340,
+						"left":264,
 //						"right":PADDING,
 						"text-align":"left",
 						"font-size":20,
-						"vertical-align":"top"});
+						"top":0,
+						"padding":8,
+						"padding-left":10,
+						"padding-right":10});
 
 //	URL REGEXP
 	$("#event-url").css({
@@ -1581,7 +1606,7 @@ function displayEventMobile() {
 		if(eventCountDown > 60) eventCountDownString = secondstotime(eventCountDown);
 		else eventCountDownString = Number(eventCountDown).toFixed(0);
 
-		$("#top-board0").text(event[USER_ID] + ' ' + currentSession[31] + ' ' + currentSession[32] + ' ' + currentSession[33]);  // freeFields
+		$("#top-board0").text(event[USER_ID] + ' [' + currentSession[32] + '] [' + currentSession[33] + '] [' + currentSession[34] + ']');  // freeFields
 		$("#top-board2").text(event[DOC_URL]);
 	//	$("#timeline").css({"top":(TOP_BOARD_HEIGHT * 3) + (BOARD_MARGIN * 14) + 4 + $("#screenshot").height()});
 
@@ -1608,6 +1633,15 @@ function displayEventMobile() {
 							event[EVENT_TIME] + '<span style="color:white;font-size:130%;"> | ' + '</span>' +
 							'<span id="event-count-down" style="color:yellow;font-size:130%;">' + eventCountDownString + '</span>/' + eventCountDownString);
 		$("#event-type").val(typeFilter);
+
+		let eventDivColor;
+		let eventDivBackColor = $("#eventDiv" + eventIndex).css("background-color");
+		if ( !eventDivBackColor ) eventDivBackColor = "rgb(187, 187, 187)";
+		if ( isDarkColor( eventDivBackColor ) ) eventDivColor = "rgb(255, 255, 255)";
+		else eventDivColor = "rgb(0, 0, 0)";
+		$("#event-target").css("background-color", eventDivBackColor); // event name with color
+		$("#event-target").css("color", eventDivColor);
+
 		$("#event-target").text(event[TYPE] + '  ' + filterEventLocalTarget(event[TARGET_LOCAL_NAME], event[TARGET]));
 		$("#top-board6").text(event[DOC_TITLE]);
 		$("#count-down").text(eventCountDown);
@@ -2039,6 +2073,7 @@ function verifTimelineBounds() {
 //*************************************************************************************************
 
 function findColorType(id) {
+
 	if ((sessions[id][TYPE] == 'focus') && (sessions[id][TARGET].indexOf('function') != -1 ))
 				return({color:'#4F4', z:13, width:3});
 	switch(sessions[id][TYPE]) {
@@ -2064,6 +2099,16 @@ function findColorType(id) {
 		case 'Input': return({color:'black', z:9, width:2});
 		default: return({color:'#BBB', z:0, width:1});
 	}
+}
+////////////////////////////
+
+function isDarkColor(rgb) {
+	var r = Number((rgb.split('(')[1]).split(',')[0]);
+	var g = Number((rgb.split('(')[1]).split(',')[1]);
+	var b = Number(((rgb.split('(')[1]).split(',')[2]).split(')')[0]);
+
+	if ( r + g + b < 383 ) return true;
+	else return false;
 }
 //*************************************************************************************************
 function isMobile() {
