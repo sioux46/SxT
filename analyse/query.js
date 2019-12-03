@@ -14,7 +14,7 @@ var EventWinDoc = ["doc","win"];
 
 var orderBy2 = ["ASC", "DESC"];
 
-var reduc = [2,1.8,1.6,1.4,1.2,1,0.8,0.6,0.4,0.2,0.1];
+var reduc = [2,1.8,1.6,1.5,1.4,1.2,1,0.8,0.6,0.5,0.4,0.2,0.1];
 
 var groupFunc = ["-","COUNT","LENGTH","GROUP_CONCAT","AVG","MIN","MAX","SUM","STDEV","VARIANCE"];
 
