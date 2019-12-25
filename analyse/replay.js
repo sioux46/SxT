@@ -66,7 +66,7 @@ var BILLE_SIZE = 70; //100;
 var MAX_ANIM_TIME = 800;
 var MINI_REDUC= 8;
 var MIN_TIME_ZOOM = 1;
-var DECI_COUNTDOWN = 50;
+var DECI_COUNTDOWN = 100; // 50;
 
 var VERY_LIGHT_GRAY = '#EEE';
 var DARK_BLUE = '#00B';
@@ -1186,7 +1186,7 @@ function startDeciCountDown() {
 		deciCountDownId = setInterval(function() {
 			var offset = $("#barreDiv").offset();
 
-			eventCountDown = Math.abs(eventCountDown - 0.05);	// DECI_COUNTDOWN = 50 millis
+			eventCountDown = Math.abs(eventCountDown - 0.1); // 0.05);	// DECI_COUNTDOWN = 50 millis
 			$("#count-down").text(eventCountDown.toFixed(1));
 			if ($("#timeline").offset().left != -$("#timeline").width() + window.innerWidth - TIMELINE_RIGHT_MARGIN)	{
 				if (zoomOn && (offset.left + window.CLIENT_X > window.innerWidth - 40)
