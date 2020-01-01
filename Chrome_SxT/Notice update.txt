@@ -11,10 +11,3 @@ Mise à jour extension Chrome
 - Publier les modifications
 
 *******************************
-*******************************
-ANCIENNE VERSION:
-Empacter avec chrome
-----------------------------
-- SiouXtrack_update.xml: ligne 4
-- copier SiouXtrack.crx
-- copier SiouXtrack_update.xml sur le serveur
