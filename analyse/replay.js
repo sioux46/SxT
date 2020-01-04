@@ -823,7 +823,7 @@ function initReplay() {
 						"border":"3px solid " + DARK_GREEN_TRANS,
 						"border-bottom":0,
 						"background-color":"white",
-						"color":DARK_RED,
+						"color": "black", // DARK_RED,
 						"font-size":18,
 						"font-weight":"bold"
 						});		// "border":"2px solid gray"
@@ -1830,9 +1830,9 @@ function displayEventMobile() {
 //****************************************************************************************
 
 function displaySummary() {  // display  top-board1
-	var eventInfo = 'Position: <span style="color:black;font-size:130%;">' + eventIndex + '</span>/' + (sessions.length - 1);
+	var eventInfo = 'Position: <span style="color:rgb(208, 28, 0);font-size:130%;">' + eventIndex + '</span>/' + (sessions.length - 1);
 	var pngInfo;
-	var barColorString = '<span style="color:black;font-size:130%;">'
+	var barColorString = '<span style="color:rgb(208, 28, 0);font-size:130%;">'
 	if (pngsNumber) pngInfo = 'Image: ' + barColorString + pngIndex + '</span>' + '/' + pngsNumber;
 	else pngInfo = "Pas d'image!";
 	var reducInfo = '';
@@ -1843,7 +1843,7 @@ function displaySummary() {  // display  top-board1
 	if (dureePast == "NaN") dureePast = 0;
 	dureePast = secondstotime(dureePast);
 
-	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  </span><span style="color:black;font-size:130%;">  |  </span>Temps: <span id="durPast" style="color:black;font-size:130%;">' + dureePast + '</span>/' + dureeProto);
+	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  </span><span style="color:rgb(208, 28, 0);font-size:130%;">  |  </span>Temps: <span id="durPast" style="color:rgb(208, 28, 0);font-size:130%;">' + dureePast + '</span>/' + dureeProto);
 
 //¨¨¨¨¨¨¨¨¨¨
 /*	$("#top-board2").text(sessions[eventIndex][DOC_URL]);
