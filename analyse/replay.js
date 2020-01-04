@@ -666,7 +666,7 @@ function createSession() {
 	var i;
 	var newSession = [];
 	for ( i = 0; i < currentSession.length; i++) newSession[i] = currentSession[i];
-    newSession[SESSION_ID] = (new Date).getTime()
+    newSession[SESSION_ID] = (new Date()).getTime()
             + Math.random().toString().substring(2,9)
             + Math.random().toString().substring(2,9);
 	newSession[4] = sessions[eventIndex][EVENT_DATE];
@@ -1832,8 +1832,8 @@ function displayEventMobile() {
 function displaySummary() {  // display  top-board1
 	var eventInfo = 'Position: <span style="color:rgb(208, 28, 0);font-size:130%;">' + eventIndex + '</span>/' + (sessions.length - 1);
 	var pngInfo;
-	var barColorString = '<span style="color:rgb(208, 28, 0);font-size:130%;">'
-	if (pngsNumber) pngInfo = 'Image: ' + barColorString + pngIndex + '</span>' + '/' + pngsNumber;
+	var barColorString = '<span style="color:black;font-size:130%;">'
+	if (pngsNumber) pngInfo = 'Image: <span style="color:rgb(208, 28, 0);font-size:130%;">' + pngIndex + '</span>' + '/' + pngsNumber;
 	else pngInfo = "Pas d'image!";
 	var reducInfo = '';
 	// if (reducFactor) reducInfo = ' ' + barColorString + reducFactor.toFixed(1) + '</span>' + ' (' + origReducFactor.toFixed(1) + '*' + reducShowPng + ')';
@@ -1843,7 +1843,7 @@ function displaySummary() {  // display  top-board1
 	if (dureePast == "NaN") dureePast = 0;
 	dureePast = secondstotime(dureePast);
 
-	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  </span><span style="color:rgb(208, 28, 0);font-size:130%;">  |  </span>Temps: <span id="durPast" style="color:rgb(208, 28, 0);font-size:130%;">' + dureePast + '</span>/' + dureeProto);
+	$("#top-board1").html(eventInfo  + barColorString + '  |  </span>' + pngInfo + barColorString + '  |  </span>Zoom: ' + reducInfo  + '  </span><span style="color:black;font-size:130%;">  |  </span>Temps: <span id="durPast" style="color:rgb(208, 28, 0);font-size:130%;">' + dureePast + '</span>/' + dureeProto);
 
 //¨¨¨¨¨¨¨¨¨¨
 /*	$("#top-board2").text(sessions[eventIndex][DOC_URL]);
