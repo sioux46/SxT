@@ -1606,7 +1606,7 @@ function displayEventMobile() {
 		if(eventCountDown > 60) eventCountDownString = secondstotime(eventCountDown);
 		else eventCountDownString = Number(eventCountDown).toFixed(0);
 
-		$("#top-board0").text(event[USER_ID] + ' [' + currentSession[32] + '] [' + currentSession[33] + '] [' + currentSession[34] + ']');  // freeFields
+		$("#top-board0").text(sessionsInfo[sessions[1][1]][3] + ' [' + currentSession[32] + '] [' + currentSession[33] + '] [' + currentSession[34] + ']');  // freeFields
 		$("#top-board2").text(event[DOC_URL]);
 	//	$("#timeline").css({"top":(TOP_BOARD_HEIGHT * 3) + (BOARD_MARGIN * 14) + 4 + $("#screenshot").height()});
 
@@ -1949,8 +1949,9 @@ function findPngs() {
 				if (xhr.responseText == "OK") {
 					return;
 				}
-				else if (sessions[1][USER_ID] == 'Anonyme') {
-							$("#new-session").css("display","none");
+				// else if (sessions[1][USER_ID] == 'Anonyme') {
+				else if (sessionsInfo[sessions[1][1]][3] == 'Anonyme') {
+					$("#new-session").css("display","none");
 				}
 			}
 			else alert('Pas de réseau!');
