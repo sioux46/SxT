@@ -30,8 +30,8 @@
 <a class="bout chrome" href="./downloadSxT_d-ffx.php?dl=d-siouxtrack.xpi&chemin=/firefox">
 &nbsp;Pour&nbsp;<span class="boutBold">Firefox</span>&nbsp;</a>
 
-<a class="bout mauve" href="https://addons.opera.com/fr/extensions/details/install-chrome-extensions">
-&nbsp;Pour&nbsp;<span class="boutBold">Opera</span>&nbsp;</a>
+<a class="bout mauve" href="https://chrome.google.com/webstore/detail/hmbonbeafhmjcpcfeabnnodjjlhpaedl/publish-accepted?authuser=0&hl=fr" target="_blank">
+&nbsp;Pour&nbsp;<span class="boutBold">Edge</span>&nbsp;</a>
 
 <a id="query" class="bout opera"  href="https://chrome.google.com/webstore/detail/hmbonbeafhmjcpcfeabnnodjjlhpaedl/publish-accepted?authuser=0&hl=fr" target="_blank" >&nbsp;Pour&nbsp;<span class="boutBold">Chrome</span>&nbsp;</a>
 
