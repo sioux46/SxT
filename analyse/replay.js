@@ -144,6 +144,8 @@ var inter1, waitResize1;
 var mouseIsDown = false;
 var zoomOrgFactor;
 
+var sameAsPrevious;
+
 
 
 //*************************************************************************************************
@@ -1613,18 +1615,12 @@ function displayEventMobile() {
 	//    T E X T E
 		$("#top-board3").css({"top":(TOP_BOARD_HEIGHT * 4) + TIMELINE_ADJUST + (BOARD_MARGIN * 16) + PADDING + $("#screenshot").height() + 40});
 
-/*
-		if ( event[TARGET_VALUE].match(/^<same/) ) {
-			event[TARGET_VALUE] = $("#top-board3").text() + event[71]
-		}
-*/
-
 		if ( !event[TYPE].match(/clickDif/) ) {
 			if (event[TARGET_VALUE] || eventId == 1)
 				if (event[TARGET] != 'Html' &&
 					 !event[TARGET_VALUE].match(/function\(.*\)\s*{/) &&
 					 !event[TARGET_VALUE].match(/<.+>.*<\//) &&
-					 event[TYPE] != 'keypress' && event[TYPE] != 'input')
+					 event[TYPE] != 'keypress' && event[TYPE] != 'input' )
 								$("#top-board3").text(event[TARGET_VALUE]);
 
 			if ((event[TARGET] == 'TextArea') || // black pour entrée texte clavier
