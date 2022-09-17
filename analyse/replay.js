@@ -144,6 +144,8 @@ var inter1, waitResize1;
 var mouseIsDown = false;
 var zoomOrgFactor;
 
+var sameAsPrevious;
+
 
 
 //*************************************************************************************************
@@ -1618,7 +1620,7 @@ function displayEventMobile() {
 				if (event[TARGET] != 'Html' &&
 					 !event[TARGET_VALUE].match(/function\(.*\)\s*{/) &&
 					 !event[TARGET_VALUE].match(/<.+>.*<\//) &&
-					 event[TYPE] != 'keypress' && event[TYPE] != 'input')
+					 event[TYPE] != 'keypress' && event[TYPE] != 'input' )
 								$("#top-board3").text(event[TARGET_VALUE]);
 
 			if ((event[TARGET] == 'TextArea') || // black pour entrée texte clavier

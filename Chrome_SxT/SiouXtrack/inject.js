@@ -252,17 +252,22 @@ else action.push('');
 //							action.push(targetContent.substring(textContent.length - MAX_TEXT_CONTENT + 10));
 
 
-	if ( event.type == 'keypress' || event.type == 'input' )
-				action.push('<same as previous>');													// targetValue		19
+/*	if ( event.type == 'keypress' || event.type == 'input' ) {
+				if ('value' in event.target) action.push('event.target.value');													// targetValue		19
+				else action.push('');
+	}
+	else */ if ( event.type == 'keyup' || event.type == 'keydown') {
 
-	else if ( event.type == 'keyup' || event.type == 'keydown') {
 		// document.getSelection().focusNode.data // texte paragraphe du caret
 		//																	.parentNode  // p quand paragraphe
 		//																	.length // taille texte
 		// 												.focusOffset // deb selection
 		//												.extendOffset // fin selection
 
-		var focusText = document.getSelection().focusNode.data;
+		var focusText;
+		if ( document.getSelection().focusNode )
+					focusText = document.getSelection().focusNode.data;
+		else 	focusText = "";
 		var focusTextLength = document.getSelection().focusNode.length;
 		focusOffset = document.getSelection().focusOffset;
 		focusExtend = document.getSelection().focusExtend;
@@ -275,7 +280,9 @@ else action.push('');
 			focusExtend = focusExtend - MAX_TEXT_CONTENT /2 + 1;
 			caretText = focusText.substring(focusOffset, focusOffset + MAX_TEXT_CONTENT /2 -1);
 		}
-		action.push(caretText);																				// targetValue		19
+		if ( caretText ) action.push(caretText);																				// targetValue		19
+		else if ('value' in event.target) action.push(event.target.value); // targetValue		19
+	  else action.push('');																							// targetValue		19
 	}
 
 	else if (('textContent' in event.target) &&
@@ -285,7 +292,6 @@ else action.push('');
 	}
 
   else if ('value' in event.target) action.push(event.target.value); // targetValue		19
-
   else action.push('');																							// targetValue		19
 //																													--> FIN   	T E X T E   C O N T E N T
 //////////////////////////////////////////////////////////////////////////////////////////////////
