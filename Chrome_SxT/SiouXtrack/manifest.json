@@ -4,7 +4,7 @@
   "version": "0.68",
   "description": "Observation du comportement pour un diagnostic ergonomique",
   "homepage_url": "https://sioux.univ-paris8.fr/sioux",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab"],
   "options_ui": {
       "page": "options.html",
       "open_in_tab": false
