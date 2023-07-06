@@ -6,20 +6,22 @@ ini_set("display_errors", 1);
 
 function connect()
 {
+	// include_once("inc/mySqlParamW.php");
 
 	define("MYHOST","localhost");
 	define("MYUSER","sioux");
 	define("MYPASS","sioux");
 	define("MYBASE","siouxtrack");
-
-	// echo MYHOST,MYUSER,MYPASS,MYBASE;
+        echo "coucou avant le new<hr>" ;
+// 	echo MYHOST,MYUSER,MYPASS,MYBASE;
 	$idcomW = new mysqli(MYHOST,MYUSER,MYPASS,MYBASE);
+	// echo "<br> idcomW[" . $idcomW . "]<br>";
 
 	/* Vérification de la connexion */
-if ($idcomW->connect_errno) {
-    echo "Échec de la connexion:  $idcomW->connect_error";
-    exit();
-}
+	if ($idcomW->connect_errno) {
+    	echo "Échec de la connexion:  $idcomW->connect_error";
+    	exit();
+	}
 	if (!$idcomW)
 	{
 	    echo "<script type=text/javascript>";
@@ -33,5 +35,13 @@ if ($idcomW->connect_errno) {
 	return $idcomW;
 }
 
-echo "Connection OK<hr>";
+echo "on vas se connecter ...<hr" ;
+
+$connect = connect();
+
+
+
+echo "apres connecttion ...<hr>" ;
+
+
 ?>

@@ -1,19 +1,18 @@
 <?php
 session_start();
 //session_destroy();
-
 include_once("inc/connectMySqlW.php");
 $base = connect();
 //include_once("inc/mySqlParam.php");
 //$base = new mysqli(MYHOST,MYUSER,MYPASS,MYBASE);
 
+
 header("content-type:text/plain");
 $reponse = "Connection...";
 $username =  $_REQUEST['username'];
 $password =  $_REQUEST['password'];
-
 if ($username == "") $reponse = "ERR-username vide";
-else if ($username == 'RedBird' /* && $password == 'supersioux' */) {
+else if ($username == 'RedBird' )  { //  && $password == 'supersioux'
 	$reponse = "OK";
 }
 else {
@@ -47,19 +46,13 @@ else {
 		}
 	}
 }
-/*                            stockage des connections
-if ($reponse == "OK") {
-	$clientIP = $_SERVER["REMOTE_ADDR"];
-	$date = date('Y-m-d');
-	$time = date('H:i:s');
-	$query = "INSERT INTO Connection (observateur, clientIP, date, time) VALUES ('$username', '$clientIP', '$date', '$time')";
-	$result = $base->query($query);
-}
-*/
+
 
 if ($reponse == 'OK') 	$_SESSION['username'] = $username;
 else $_SESSION['username'] = '';
 
 echo $reponse;
 $base->close();
+
+
 ?>

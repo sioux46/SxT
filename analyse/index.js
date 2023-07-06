@@ -8,7 +8,7 @@ $(document).ready(function() {
 	$("#login-button").on("click", function() {
 		this.blur();
 		pendingConnection = false;
-		
+
         var username = $.trim($("#username").val());
         var password = $.trim($("#password").val());
 		if (!password || (password.match(/^.{8,15}$/) && !password.match(/\s/))) {
@@ -17,7 +17,7 @@ $(document).ready(function() {
 				data: {username: username, password: password},
 				complete: function(xhr, result) {
 					if (result != 'success') {
-						alert('Pas de reseau!');
+						alert('Pas de reseau! replay_Login.php ');
 					}
 					else {
 						var reponse = xhr.responseText;
@@ -26,7 +26,7 @@ $(document).ready(function() {
 							$("#username, #password").val("");
 						}
 						else {
-							$("#password").val("");							
+							$("#password").val("");
 							$.ajax({
 								url: 'verifSuperu.php',
 								complete: function(xhr, result) {
@@ -37,26 +37,26 @@ $(document).ready(function() {
 											window.location.href =  'query.php';
 										}
 									}
-									else alert('Pas de réseau!');
+									else alert('Pas de réseau! Login-button');
 								}
-							});							
+							});
 						}
 					}
 				}
 			});
-		}				
+		}
 	});
-	
+
 //******************************************************************************
 	$("#username").on("blur", function() {
 		pendingConnection = true;
 	});
-	
+
 //******************************************************************************
 	$("#query").on("click", function() {
 		if (pendingConnection) $("#username, #password").val("");
 	});
-	
+
 //******************************************************************************
 	$("#sup-sessions-vide").on("click", function() {
 			this.blur();
@@ -73,7 +73,7 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
+
 //******************************************************************************
 	$("#sup-events-vide").on("click", function() {
 		this.blur();
@@ -91,5 +91,5 @@ $(document).ready(function() {
 		});
 	});
 //******************************************************************************
-	
+
 });  // fin READY

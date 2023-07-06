@@ -467,7 +467,7 @@ function showHisto(button) { // non utilisé
 			data:{query:query},
 			complete: function(xhr, result) {
 				if (result == 'success') $("#sessionsList").html(xhr.responseText);
-				else alert('Pas de réseau!');
+				else alert('Pas de réseau! ajaxInnerListQuery.php');
 			}
 		});
 
@@ -555,7 +555,7 @@ $(document).ready(function() {
 						}
 					}
 					else {
-						alert('Pas de réseau!');
+						alert('Pas de réseau! doDeleteSessionsMuet.php');
 					}
 				}
 			});
@@ -575,7 +575,7 @@ $(document).ready(function() {
 						window.location = 'downloadSxTQuery.php';
 					}
 					else {
-						alert('Pas de réseau!');
+						alert('Pas de réseau! downloadSxTQueryFromQuery.php');
 					}
 				}
 			});
@@ -600,7 +600,7 @@ $(document).ready(function() {
 					$('#order-sessions').hide();  // bout radio trier user
 				}
 			}
-			else alert('Pas de réseau!');
+			else alert('Pas de réseau!verifSuperu.php');
 		}
 	});
 //////////////////////////////////////////////////////////////////////////////////////////////
